@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <main>
+
+    <div class="grid">
+        <!--turn indicator-->
+        <div class="turn " data-id="turn">
+            <i class="fa-solid fa-x turqoise"></i>
+            <p class="turqoise">Player 1, you're up!</p>
+        </div>
+
+        <!--Dropdown menu-->
+        <div class="menu" data-id="menu">
+            <button class="menu-btn" data-id="menu-btn" >
+                Actions
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="items border hidden" data-id="menu-items">
+            <button data-id="reset-btn">Reset</button>
+            <button data-id="new-round-btn">New Round</button>
+
+        </div>
+
+        </div>
+        <div id="1" class="square" data-id="square" ></div>
+        <div id="2" class="square" data-id="square"></div>
+        <div id="3" class="square" data-id="square"></div>
+        <div id="4" class="square" data-id="square"></div>
+        <div id="5" class="square" data-id="square"></div>
+        <div id="6" class="square" data-id="square"></div>
+        <div id="7" class="square" data-id="square"></div>
+        <div id="8" class="square" data-id="square"></div>
+        <div id="9" class="square" data-id="square"></div>
+
+        <div class="score" style="background-color: turquoise;">
+            <p><b>Player 1</b></p>
+            <span data-id="p1-wins">0 Wins</span>
+        </div>
+
+        <div class="score" style="background-color: lightgray;">
+            <p><b>Ties</b></p>
+            <span data-id="ties">0 Ties</span>
+        </div>
+        <div class="score" style="background-color: yellow;">
+            <p><b>Player 2</b></p>
+            <span data-id="p2-wins">0 Wins</span>
+        </div>
+
+    </div>
+
+   </main> 
+   <footer>
+    Made with love by <a href="">@Shruti_Agrawal</a>
+   </footer>
+
+   <!--displays when the game ends-->
+   <div class="modal hidden" data-id="modal">
+    <div class="modal-contents ">
+    <p data-id="modal-text">Player 1 wins!</p>
+    <button data-id="modal-btn">Play again</button>
+</div>
+   </div>
+
+<script src="js/app.js" type="module"></script>
+</body>
+</html>
