@@ -1,0 +1,219 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border: none;
+    list-style: none;
+}
+.grid{
+    display: grid;
+    grid-template-columns:repeat(3,80px) ;
+    grid-template-rows: 50px repeat(3,80px) 60px;
+    gap: 5px;
+
+}
+/*creating a variable of global scope using :root selector*/
+:root{
+    --dark-gray:#1a2a32;
+    --gray:#2e4756;
+    --turquoise:#3cc4bf;
+    --yellow:#f2b147;
+    --light-gray:#d3d3d3;
+}
+body{
+    padding: 90px 20px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center; 
+}
+html,body{
+   height: 100%;
+    background-color:var(--dark-gray);
+}
+.turn{
+   /* color:var(--yellow); */
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: center;
+    display:flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.turn i{
+    font-size: 1.8rem;
+    margin-left: 10px;
+    animation: 0.6s ease-in-out turn-icon-animation;
+} 
+.turn p{
+    font-size: 13px;
+     animation: 0.6s ease-in-out turn-text-animation; 
+}
+
+@keyframes turn-text-animation{
+    0%{
+        opacity: 0;
+        transform: translateX(-20px)
+    }
+    100%{
+        opacity: 100%;
+        transform: translateX(0);
+    }
+}
+
+@keyframes turn-icon-animation{
+    0%{
+        transform:scale(1);
+    }
+    25%{
+        transform: scale(1.4);
+    }
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+.square{
+background-color: red;
+}
+.score{
+background-color: blue;
+}
+.actions{
+    background-color: purple;
+}
+footer {
+    color: hsla(0, 0%, 100%, 0.578);
+    padding-top: 25px;
+}
+footer a{
+    color: var(--turquoise);
+}
+@media (min-width:768px) {
+    .grid{
+        width: 490px;
+        grid-template-columns: repeat(3,120px);
+        grid-template-rows: 50px repeat(3,120px) 60px;
+        gap: 20px;
+    }
+}
+
+/*Dropdown Menu styling*/
+.menu{
+    position: relative;
+}
+.menu-btn{
+    width:100%; /*full width of menu container */
+    height: 100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--gray);
+    border: 1px solid transparent;
+}
+.items{
+    position: absolute; /* as the parent container is relative we can set the child to be absolute, whiich means its relative to its adjacent parent */
+    z-index: 10;
+    top: 60px; /*as the parent button is top:50px*/
+    right: 0;
+    background-color: var(--dark-gray);
+    border-radius:2px;
+    padding:10px;
+    }
+.items button{
+  padding: 8px;
+  background-color:var(--dark-gray);
+  color: white ;
+}
+.items button:hover{
+    cursor:pointer;
+    background-color:#1a2a3266;
+    text-decoration: underline;
+}
+
+
+.border{
+    border:1px solid white;
+}
+
+/* square styling */
+.square{
+    background-color: var(--gray);
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:3rem
+}
+.square:hover{
+    cursor: pointer;
+    opacity:80%
+}
+/* scoreboard styles */
+.score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius:10px ;
+}
+.score p{
+   font-size: 13px;
+   font-style: bold;
+}
+.score span{
+    font-size: 12px;
+    margin-top: 2px;
+}
+/* modal that is used for the actual tic tac  */
+
+.modal{
+    position: fixed;
+    background-color: rgb(0,0, 0,0.6);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+.modal-contents{
+    height: 150px;
+    width: 100%;
+    max-width: 300px; /*for mobile responsive*/
+    background-color: #1a2a32;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    margin: 10px; /*for mobile responsive*/
+    margin-right: 100px;
+}
+
+.modal button{
+    padding: 10px;
+    background-color: var(--turquoise);
+    color: #1a4544;
+    border-radius:5px ;
+}
+
+/* color classes */
+.turqoise{
+    color: var(--turquoise);
+}
+.yellow{
+    color: var(--yellow);
+}
+/* display */
+.hidden{
+    display: none;
+}
